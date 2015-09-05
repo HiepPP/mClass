@@ -1,0 +1,22 @@
+﻿.HoatDong {
+    display:none;
+}
+.Slide{
+    display:none;
+}
+.BookWarp {
+    height:auto;
+    width:500px;
+    margin-left:30%;
+}
+.Anh {
+    padding-left:20%;
+}
+.TenSach {
+    text-align:center;
+    border:solid;
+    border-radius:5px;
+}
+.MoTa {
+    margin:5px;
+}

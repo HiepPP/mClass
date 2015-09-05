@@ -1,0 +1,31 @@
+﻿@using WebsiteBanSach.Models
+@model WebsiteBanSach.Models.Sach
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+    <link href="~/Content/UserCSSLayout/XemChiTiet.css" rel="stylesheet" />
+}
+@section NhaXuatBanContent{
+    <div class="BookWarp">
+    <div class="Anh"><img src="@Url.Content("~/HinhAnhSP/"+Model.AnhBia)" /></div>
+    <div class="TenSach">@Model.TenSach</div>
+    <div class="MoTa">@Model.MoTa</div>
+    <div class="Gia">@Model.GiaBan</div>
+    @using (Html.BeginForm("ThemGioHang","GioHang", new{@_MaSach=Model.MaSach,@url =Request.Url.ToString()}))
+    {
+        <input type="submit" value="Mua hàng"/>
+    }
+</div>
+    <div style="height:100px;width:100px;padding:5px;">
+        <fieldset>
+            <legend>Hàng vừa xem</legend>
+            @foreach (var item in ViewBag.Views)
+            {
+                <a href="/Sach/XemChiTiet/@item.MaSach">
+                    <img src="~/HinhAnhSP/@item.AnhBia"/>
+                </a>
+            }
+        </fieldset>
+    </div>
+    }
+<h2>XemChiTiet</h2>

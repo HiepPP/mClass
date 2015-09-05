@@ -1,0 +1,7 @@
+﻿
+@*@Html.ActionLink(ViewBag.TongSoLuong, "GioHang", "GioHang", htmlAttributes: new { @class = "" })*@
+@*<a href="@Url.Action("GioHang","GioHang")"><i class="fa fa-shopping-cart"></i> (@ViewBag.TongSoLuong)</a>*@
+@if(ViewBag.TongSoLuong > 0)
+{ 
+@Html.ActionLink((string)ViewBag.TongSoLuong.ToString(), "GioHang",null, htmlAttributes: new { @class = "fa fa-shopping-cart" })
+}

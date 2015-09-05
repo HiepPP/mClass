@@ -1,0 +1,22 @@
+﻿@model WebsiteBanSach.Models.KhachHang
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+}
+
+<h2>Đăng nhập</h2>
+<h2>@ViewBag.ThongBao</h2>
+@using (Html.BeginForm("DangNhap","NguoiDung",FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <span>Tài khoản:</span> 
+    @*@Html.TextBox("txtTaiKhoan")*@
+    @Html.TextBoxFor(x=>x.TaiKhoan)
+    <br />
+    <span>Mật khẩu:</span>
+    @*@Html.TextBox("txtMatKhau")*@
+    @Html.PasswordFor(x=>x.MatKhau)
+    <br />
+    <input type="submit" id="btnSubmit" name="btnSubmit"/> 
+}
+

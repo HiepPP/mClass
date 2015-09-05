@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WebsiteBanSach.Models.ChuDe>
+
+@foreach (var item in Model)
+{
+    @*<a href="#" class="button">@item.TenChuDe</a>*@
+    @Html.ActionLink(@item.TenChuDe, "ListSach","Home",  new { mChuDe = item.MaChuDe }, htmlAttributes: new {@class="button"})
+}
+@*@Html.ActionLink("Chủ đề khác", "DanhMucChuDe","ChuDe",htmlAttributes: new {@class="button"})*@
+
+@Html.ActionLink("Chủ đề khác", "ShowAll", "Home", new { kCD = 0 }, new { @class = "button" })
+@*<a href="javascript:;" id="ShowChuDe">chủ đề khác</a>*@
+@*<button id="ShowChuDe">chu de khac</button>*@

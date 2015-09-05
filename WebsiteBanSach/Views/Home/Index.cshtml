@@ -1,0 +1,43 @@
+﻿@using WebsiteBanSach.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<Sach>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+    <link href="~/Content/UserCSSLayout/TrangChuCss.css" rel="stylesheet" />
+}
+@section NhaXuatBanContent{
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+    }
+@*Trang Index*@
+<div id="divBody">
+    @{int i = 0;}
+    @foreach (var item in Model)
+    {
+        i++;
+        <div id="SanPham">
+            <div id="AnhBia">
+                <a href=@Url.Action("XemChiTiet", "Sach", new {id=item.MaSach })>
+                    <img src="@Url.Content("~/HinhAnhSP/" + item.AnhBia)" />
+                </a>
+            </div>
+            @Html.ActionLink(@item.TenSach, "XemChiTiet", "Sach", new { id = item.MaSach }, htmlAttributes: new {@id="TenSach" })
+            <div id="DonGia">@item.GiaBan</div>
+        </div>
+        if (i%3==0)
+        {
+            <div style="clear:both"></div>
+        }
+    }
+</div>
+@*Tạo link liên kết các trang*@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang li{
+        display:inline;
+    }
+</style>

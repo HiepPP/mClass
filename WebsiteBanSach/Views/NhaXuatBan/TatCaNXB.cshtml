@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebsiteBanSach.Models.NhaXuatBan>
+@{
+    ViewBag.Title = "TatCaNXB";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+}
+
+<h2>TatCaNXB</h2>
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(@item.TenNXB, "HienThiSachNXB", new { id=item.MaNXB}, htmlAttributes: new { @class = "button", style = "width:300px;" })
+    <br />
+}

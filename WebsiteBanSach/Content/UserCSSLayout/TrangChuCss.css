@@ -1,0 +1,25 @@
+﻿#SanPham {
+    float:left;
+    width:400px;
+    height:400px;
+    margin:2px;
+    border:dashed;
+    border-style:solid;
+    text-align:center;
+}
+#divBody {
+    margin-left:50px;
+}
+#AnhBia {
+    margin-left:50px;
+}
+#TenSach {
+}
+#DonGia {
+    width:80px;
+    height:30px;
+    background-color:aqua;
+    font-size:20px;
+    color:#ea1515;
+    margin-left:50%;
+}

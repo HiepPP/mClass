@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebsiteBanSach.Models.Sach>
+@{
+    ViewBag.Title = "HienThiSachNXB";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+    <link href="~/Content/UserCSSLayout/TrangChuCss.css" rel="stylesheet" />
+}
+
+<h2>HienThiSachNXB</h2>
+<div id="divBody">
+    @{int i = 0;}
+    @foreach (var item in Model)
+    {
+        i++;
+        <div id="SanPham">
+            <div id="AnhBia"><img src="@Url.Content("~/HinhAnhSP/" + item.AnhBia)" /></div>
+            @Html.ActionLink(item.TenSach, "XemChiTiet", "Sach", new { id = item.MaSach }, htmlAttributes: new {@id="TenSach" })
+            <div id="DonGia">@item.GiaBan</div>
+        </div>
+        if (i % 3 == 0)
+        {
+            <div style="clear:both"></div>
+        }
+    }
+</div>
+<div style="clear:both"></div>
+

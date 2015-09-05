@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WebsiteBanSach.Models.Sach>
+<h1 class="item-header">TIÊU ĐỀ</h1>
+@foreach (var item in Model)
+{
+    <div class="activity-list-update">
+        <img src="@Url.Content("~/HinhAnhSP/"+item.AnhBia)" width="50" height="50" alt="Image">
+        @if(item.TenSach.Length > 30)
+        {
+        @*<p> <strong title="@item.TenSach">Tiêu đề: @item.TenSach.Substring(0,30)...</strong>@Html.ActionLink(item.TenSach, "XemChiTiet", new { id=item.MaSach}) </p>*@
+            <p><strong>Tiêu đề: @Html.ActionLink(@item.TenSach.Substring(0, 30), "XemChiTiet", new { id=item.MaSach}) </strong></p>
+        }
+        else{
+        @*<p> <strong title="@item.TenSach">@item.TenSach</strong></p><a href="@Url.Action("XemChiTiet", new { id =item.MaSach})"></a>*@
+            <p><strong>Tiêu đề: @Html.ActionLink(@item.TenSach, "XemChiTiet", new { id=item.MaSach})</strong></p>
+        }
+        <p><a href="#">Xem chi tiết</a></p>
+        <div class="clear"></div>
+    </div>
+}
+
+<a href="#" class="item-footer green">
+    SÁCH MỚI CẬP NHẬT
+</a>

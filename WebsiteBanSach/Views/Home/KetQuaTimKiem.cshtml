@@ -1,0 +1,45 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model PagedList<WebsiteBanSach.Models.Sach>
+
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+<link href="~/Content/UserCSSLayout/TrangChuCss.css" rel="stylesheet" />
+}
+
+<h2>KetQuaTimKiem</h2>
+@ViewBag.Tim
+@ViewBag.KhongThay
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@{int i = 0;}
+@foreach (var item in Model)
+{
+    i++;
+    <div id="SanPham">
+        <div id="AnhBia">
+            <a href=@Url.Action("XemChiTiet", "Sach", new {id=item.MaSach })>
+                <img src="@Url.Content("~/HinhAnhSP/" + item.AnhBia)" />
+            </a>
+        </div>
+        @Html.ActionLink(@item.TenSach, "XemChiTiet", "Sach", new { id = item.MaSach }, htmlAttributes: new { @id = "TenSach" })
+        <div id="DonGia">@item.GiaBan</div>
+    </div>
+    if (i % 3 == 0)
+    {
+        <div style="clear:both"></div>
+    }
+}
+</div>
+@*Tạo link liên kết các trang*@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

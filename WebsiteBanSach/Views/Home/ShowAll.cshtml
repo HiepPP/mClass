@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebsiteBanSach.Models.MutiModel.ShowAllModel>
+@{
+    ViewBag.Title = "ShowAll";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+}
+
+<h2>ShowAll</h2>
+<div id="Show">
+        @if (Model.Select(x => x.MaNXB).FirstOrDefault() == 0) { 
+            foreach (var item in Model)
+    {
+                @Html.ActionLink(item.TenChuDe, "ListSach", "Home", new { mChuDe = item.MaChuDe }, htmlAttributes: new { @class = "button", style = "width:300px;" })
+                <br />
+    }
+        }
+        //else if(Model.Select(x=>x.MaChuDe).FirstOrDefault() == 0)
+    else
+        {
+            foreach (var item in Model)
+            {
+                @Html.ActionLink(item.TenNXB, "ListSach", "Home", new { mNXB = item.MaNXB }, htmlAttributes: new { @class = "button", style = "width:300px;" })
+                <br />
+            }
+        }
+</div>

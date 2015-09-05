@@ -1,0 +1,97 @@
+﻿.ToanTrang {
+    position:relative;
+}
+.DangKyDangNhap {
+    float: right;
+    margin-top: -1%;
+}
+    .DangKyDangNhap a:hover {
+    text-decoration:none;
+    color:green;
+    }
+.Phone {
+    float:left;
+    margin-top:-1%;
+}
+/*div Danh Muc*/
+#divDanhMuc {
+    height:30px;
+}
+    #divDanhMuc a:hover {
+    text-decoration:none;
+    color:green;
+    }
+/*Div menu*/
+.navMenu {
+    float:right;
+    margin-right: 10%;
+}
+.navMenu li{
+    display:inline;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    padding:20px;
+    padding-top:21px;
+    padding-bottom:22px;
+    transition:all 0.5s ease-out;
+}
+    .navMenu li:hover {
+    background-color: rgba(0,0,0,0.5);
+    transition:all 0.5s ease-out;
+    }
+    .navMenu a:hover {
+    text-decoration:none;
+    }
+/*css tim kiem*/
+#Search {
+    float:left;
+    margin-left:3%;
+}
+    #Search input {
+    height:0;
+    }
+.btnSearch{
+    padding-top:10px;
+}
+/*CSS slider*/
+#slider {
+    float:right;
+    width:900px;
+    height:360px;
+}
+.HoatDong {
+    float:left;
+}
+/*div nha xuat ban*/
+#NhaXuatBan {
+    float:left;
+    width:500px;
+}
+    #NhaXuatBan .item{
+    width:100%;
+    }
+#NhaXuatBanContent {
+    width:600px;
+    float:left;
+    word-break:keep-all;
+}
+/*.linktest {
+    width:150px;
+    margin:2px;
+    background-color:black;
+    padding: 5px;
+    text-align:center;
+    float:left;
+    color:white;
+}
+.warplinktest {
+    width:auto;
+    height:170px;
+    background-color:aliceblue;
+}
+/*css menu chu de*/
+/*#map{
+    height:50%;
+}
+#bottom {
+    height:60%;
+}*/*/
